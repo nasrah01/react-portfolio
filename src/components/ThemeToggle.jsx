@@ -5,13 +5,16 @@ import {  BiMoon } from "react-icons/bi";
 import { ThemeContext } from 'Theme';
 
 const ThemeToggle = () => {
-  const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
+  const { isLightTheme, toggleTheme } = useContext(ThemeContext);
 
   return (
-    <ToggleContainer>
-      <Icon onClick={toggleTheme}>
-        
-        {isDarkTheme ? <BsSun size={24} /> : <BiMoon size={24} />}
+    <ToggleContainer onClick={toggleTheme} className="btn">
+      <Icon>
+        {isLightTheme ? (
+          <BiMoon size={24} />
+        ) : (
+          <BsSun size={24} />
+        )}
       </Icon>
     </ToggleContainer>
   );
@@ -20,13 +23,9 @@ const ThemeToggle = () => {
 export default ThemeToggle
 
 const ToggleContainer = styled.div`
-  position: fixed;
-  top: 30px;
-  right: 30px;
-`
+  padding: 0 10px;
+`;
 
 const Icon = styled.div`
-  display: flex;
-  justify-content: center;
-  background: red;
-`
+  color: ${(props) => props.theme.primaryColor}
+`;

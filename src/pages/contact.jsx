@@ -9,5 +9,5 @@ const Contact = () => {
 export default Contact;
 
 const ContactBox = styled.div`
-  height: 100vh;
+
 `

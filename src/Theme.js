@@ -3,20 +3,20 @@ import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "./GlobalStyles";
 
 export const ThemeContext = createContext({
-  isDarkTheme: true,
+  isLightTheme: false,
   toggleTheme: () => {}
 })
 
 const Theme = ({ children }) => {
-  const [dark, setDark ] = useState(true);
+  const [light, setLight ] = useState(true);
 
   const toggleTheme = () => {
-    setDark(!dark);
+    setLight(!light);
   }
 
   return (
-    <ThemeContext.Provider value={{isDarkTheme: dark, toggleTheme}}>
-      <ThemeProvider theme={dark ? darkTheme : lightTheme }>
+    <ThemeContext.Provider value={{isLightTheme: light, toggleTheme}}>
+      <ThemeProvider theme={light ? lightTheme : darkTheme }>
         {children}
       </ThemeProvider>
     </ThemeContext.Provider>

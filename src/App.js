@@ -1,22 +1,36 @@
 import { GlobalStyle} from "./GlobalStyles"
-import Home from './components/Home'
-import Skills from "./components/Skills";
-import Portfolio from './components/Portfolio'
-import Contact from "./components/Contact";
-import ScrollToTop from "components/ScrollToTop";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NavBar from "components/NavBar";
+import Home from './pages/home'
+import Skills from "./pages/skills";
+import Portfolio from './pages/portfolio'
+import Contact from "./pages/contact";
+import styled from 'styled-components'
 
 function App() {
 
   return (
-      <div>
-        <GlobalStyle />
-        <ScrollToTop />
-        <Home />
-        <Skills />
-        <Portfolio />
-        <Contact />
-      </div>
+    <div>
+      <GlobalStyle />
+      <BrowserRouter>
+        <Container>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/skills" element={<Skills />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes> 
+        </Container>
+      </BrowserRouter>
+    </div>
   );
 }
 
 export default App;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`
