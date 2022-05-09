@@ -24,6 +24,7 @@ export default ThemeToggle
 
 const ToggleContainer = styled.div`
   padding: 0 10px;
+  border: 1px sild ${props => props.theme.borderColor};
 `;
 
 const Icon = styled.div`

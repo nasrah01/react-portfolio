@@ -8,7 +8,7 @@ export const ThemeContext = createContext({
 })
 
 const Theme = ({ children }) => {
-  const [light, setLight ] = useState(true);
+  const [light, setLight ] = useState(false);
 
   const toggleTheme = () => {
     setLight(!light);

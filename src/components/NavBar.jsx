@@ -11,7 +11,7 @@ const NavBar = () => {
           <span style={{ background: "#F3C94F" }}></span>
           <span style={{ background: "#95EB80" }}></span>
         </Buttons>
-        <Name>Nasrah_Abraham</Name>
+        <Name>nasrah_abraham</Name>
         <ThemeToggle />
       </Title>
       <NavBoxes>
@@ -38,8 +38,6 @@ const NavContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-  box-shadow: ${(props) => props.theme.boxShadow};
-  padding-bottom: 20px;
 `;
 
 const Title = styled.div`
@@ -72,12 +70,19 @@ const NavBoxes = styled.ul`
   background: ${(props) => props.theme.bodyOffSet};
   list-style-type: none;
 
+
   a {
     text-decoration: none;
     color: ${(props) => props.theme.primaryColor};
     padding: 10px 45px;
-    border: ${(props) => props.theme.border};
+    border-right: 1px solid ${(props) => props.theme.borderColor};
     font-size: 14px;
+
+    @media screen and (max-width: 600px) {
+      font-size: 12px;
+      padding: 10px;
+      width: 100%;
+    }
   }
 
   .active {

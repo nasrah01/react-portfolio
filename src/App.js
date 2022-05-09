@@ -6,6 +6,7 @@ import Skills from "./pages/skills";
 import Portfolio from './pages/portfolio'
 import Contact from "./pages/contact";
 import styled from 'styled-components'
+import Footer from "components/Footer";
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contact" element={<Contact />} />
         </Routes> 
+        <Footer />
         </Container>
       </BrowserRouter>
     </div>

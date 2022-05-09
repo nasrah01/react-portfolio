@@ -48,7 +48,13 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-`
+  padding-top: 20px;
+
+  @media screen and (max-width: 1054px) {
+    flex-direction: column;
+    padding-bottom: 20px;
+  }
+`;
 
 const Hero = styled.div`
   min-height: 600px;
@@ -59,6 +65,11 @@ const Hero = styled.div`
 
   .icon {
     color: ${(props) => props.theme.boldColor};
+  }
+
+  @media screen and (max-width: 600px) {
+    height: 100%;
+    padding: 20px
   }
 `;
 
@@ -92,7 +103,7 @@ const CodeContainer = styled.div`
   border: ${(props) => props.theme.border};
   border-radius: 10px;
   padding: 20px;
-  box-shadow: rgba(38, 57, 77, .4) 0px 30px 90px;
+  box-shadow: ${props => props.theme.boxShadow};
 `;
 
 const About = styled.div`
@@ -100,16 +111,31 @@ const About = styled.div`
   background: ${(props) => props.theme.bodyOffSet};
   border-radius: 10px;
   padding: 20px 0;
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    padding: 20px;
+  }
 `;
 
 const AboutContent = styled.div`
   color: ${(props) => props.theme.primaryColor};
   padding: 20px;
+
+  @media screen and (max-width: 500px) {
+    padding: 5px;
+  }
+
   p {
     line-height: 1.6;
     border-left: ${(props) => props.theme.border};
     margin: 10px;
     padding: 10px;
+
+    @media screen and (max-width: 500px) {
+      padding: 5px;
+      margin: 5px;
+    }
   }
 `;
 
@@ -125,4 +151,5 @@ const Contact = styled.div`
   padding: 5px 20px;
   margin-bottom: 10px;
   color: ${(props) => props.theme.bodyOffSet};
+  font-weight: 600;
 `;

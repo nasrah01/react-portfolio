@@ -1,11 +1,14 @@
 import styled from "styled-components";
+import Project from '../components/Project'
 
 const Portfolio = () => {
   return (
     <Projects>
       <Container>
-        <Header>Top Projects</Header>
-        <Boxes>projects</Boxes>
+        <Header>top_projects</Header>
+        <Boxes>
+          <Project />
+        </Boxes>
       </Container>
     </Projects>
   )
@@ -16,15 +19,29 @@ export default Portfolio;
 const Projects = styled.div`
   display: flex;
   flex: 1;
-  background: red;
 `
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   flex: 1;
+  height: 100%;
 `
 
-const Header = styled.h2``
+const Header = styled.h2`
+  padding: 30px;
+`
 
-const Boxes = styled.div``
+const Boxes = styled.div`
+  display: flex;
+  padding: 30px;
+
+  @media screen and (max-width: 1054px) {
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 600px) {
+    padding: 0;
+  }
+`;

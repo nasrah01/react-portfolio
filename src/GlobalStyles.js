@@ -1,11 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
+
  export const GlobalStyle = createGlobalStyle`
-  :root {
-    --primary-color: #010440; //blue
-    --secondary-color: #F2441D; // orange
-    --black-color:#0D0D0D; //black
-  }
 
   *, 
   *::before,
@@ -27,7 +23,7 @@ import { createGlobalStyle } from "styled-components";
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    font-family: Verdana, Arial, Tahoma, Serif;
+    font-family: 'Karma', serif;
     background: ${(props) => props.theme.body};
     color: ${(props) => props.theme.textColor};
     transition: all .5s ease;
@@ -57,15 +53,17 @@ import { createGlobalStyle } from "styled-components";
 `;
 
 export const darkTheme = {
-  body: "#080c12",
+  body: "#080a12",
   bodyOffSet: "#000",
   textColor: "#fff",
   primaryColor: "#637383", //grey
-  secondaryColor: "#ff981a", //orange
+  secondaryColor: "#cc7000", //orange
   tertiaryColor: "#098bdc", // blue
   boldColor: "#663399",
-  boxShadow: "0 5px 5px -5px #172436",
+  boxShadow: "rgba(38, 57, 77, .4) 0px 30px 90px;",
+  opacity: ".7",
   border: "1px solid #1a1a1a",
+  borderColor: "#1a1a1a",
 };
 
 export const lightTheme = {
@@ -76,6 +74,8 @@ export const lightTheme = {
   secondaryColor: "#333333", //orange
   tertiaryColor: " #2251dd", //blue
   boldColor: "#FF605C", //red
-  boxShadow: "0 5px 2px -5px #d9d9d9",
+  boxShadow: "rgba(153, 153, 153, 0.4) 0px 30px 90px;",
+  opacity: "1",
   border: "1px solid #d9d9d9",
+  borderColor: "#d9d9d9",
 };
