@@ -68,7 +68,7 @@ const Hero = styled.div`
   }
 
   @media screen and (max-width: 600px) {
-    height: 100%;
+    min-height: 500px;
     padding: 20px
   }
 `;
@@ -87,6 +87,10 @@ const Header = styled.div`
 const Content = styled.div` 
   display: flex;
   align-items: center;
+
+  @media screen and (max-width: 600px) {
+    align-items: flex-start;
+  }
 
   p {
     color: ${props => props.theme.primaryColor};

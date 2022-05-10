@@ -13,7 +13,7 @@ const Skill = () => {
   return (
     <SkillBox>
       {skillSet.map((items, index) => (
-        <Sub>
+        <Item>
           <Category key={index}>
             <MdOutlineKeyboardArrowDown />
             <p>{items.title}</p>
@@ -28,7 +28,7 @@ const Skill = () => {
               <p key={_index}>{item}</p>
             </Stack>
           ))}
-        </Sub>
+        </Item>
       ))}
     </SkillBox>
   );
@@ -47,7 +47,10 @@ const SkillBox = styled.div`
   }
 `;
 
-const Sub = styled.div`
+const Item = styled.div`
+  @media screen and (max-width: 600px) {
+    padding-bottom: 10px;
+  }
 `;
 
 const Category = styled.div`
@@ -60,7 +63,7 @@ const Category = styled.div`
 const Technology = styled.div`
   display: flex;
   align-items: center;
-  padding: 1px 15px;
+  padding: 1px 10px;
   color: ${(props) => props.theme.tertiaryColor};
 `;
 

@@ -53,7 +53,7 @@ import { createGlobalStyle } from "styled-components";
 `;
 
 export const darkTheme = {
-  body: "#080a12",
+  body: "#101423",
   bodyOffSet: "#000",
   textColor: "#fff",
   primaryColor: "#637383", //grey
@@ -67,15 +67,15 @@ export const darkTheme = {
 };
 
 export const lightTheme = {
-  body: "#f9f9f9",
-  bodyOffSet: "#f1f1f1",
+  body: "#fff",
+  bodyOffSet: "#eff5f5",
   textColor: "#000000",
   primaryColor: "#637383", //gray
   secondaryColor: "#333333", //orange
   tertiaryColor: " #2251dd", //blue
   boldColor: "#FF605C", //red
-  boxShadow: "rgba(153, 153, 153, 0.4) 0px 30px 90px;",
+  boxShadow: "rgba(95, 158, 160, 0.4) 0px 10px 40px;",
   opacity: "1",
-  border: "1px solid #d9d9d9",
-  borderColor: "#d9d9d9",
+  border: "1px solid #bfbfbf",
+  borderColor: "fff",
 };

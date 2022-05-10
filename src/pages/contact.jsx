@@ -50,13 +50,15 @@ const Contact = () => {
 export default Contact;
 
 const ContactContainer = styled.div`
-flex: 1;
-display: flex;
-justify-content: center;
-align-items: center;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-
-`
+  @media screen and (max-height: 800px) {
+    margin: 40px 0;
+  }
+`;
 
 const FormContainer = styled.div`
   @media screen and (max-width: 600px) {

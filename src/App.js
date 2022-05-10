@@ -13,16 +13,16 @@ function App() {
   return (
     <div>
       <GlobalStyle />
-      <BrowserRouter>
+      <BrowserRouter basename="/">
         <Container>
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes> 
-        <Footer />
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+          <Footer />
         </Container>
       </BrowserRouter>
     </div>

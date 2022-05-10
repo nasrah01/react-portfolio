@@ -1,12 +1,20 @@
 import styled from "styled-components"
 import Skill from '../components/Skill'
 import { AboutSet } from "data/skills";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 
 const Skills = () => {
   return (
     <Container>
       <SideBar>
+        <SidebarHeader>
+          <h3>EXPLORER</h3>
+          <SidebarTitle>
+            <MdOutlineKeyboardArrowDown />
+            <p>MY-INTERESTS</p>
+          </SidebarTitle>
+        </SidebarHeader>
         <Skill />
       </SideBar>
       <About>
@@ -34,7 +42,30 @@ const Container = styled.div`
 const SideBar = styled.div`
   background: ${(props) => props.theme.bodyOffSet};
   flex: 20%;
-  border: ${(props) => props.theme.border};
+  border-right: ${(props) => props.theme.border};
+  border-top: ${(props) => props.theme.border};
+  border-left: ${(props) => props.theme.border};
+`;
+
+const SidebarHeader = styled.div`
+  padding-top: 10px;
+  color: ${(props) => props.theme.primaryColor};
+  h3 {
+    font-weight: 400;
+    font-size: 12px;
+    padding-left: 20px;
+  }
+`;
+
+const SidebarTitle = styled.div`
+  display: flex;
+  align-items: flex-start;
+  padding-top: 10px;
+
+  p {
+    font-size: 14px;
+    font-weight: 700;
+  }
 `;
 
 const About = styled.div`

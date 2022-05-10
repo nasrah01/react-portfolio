@@ -52,10 +52,14 @@ const Header = styled.div`
 `;
 
 const Border = styled.div`
-  border: ${props => props.theme.border};
+  border: ${(props) => props.theme.border};
   border-radius: 10px;
   padding: 20px;
-`
+
+  @media screen and (max-width: 600px) {
+    padding: 20px 0;
+  }
+`;
 
 const Content = styled.div`
   background: ${(props) => props.theme.bodyOffSet};
@@ -68,6 +72,10 @@ const Imaging = styled.div`
   height: 100%;
   width: 100%;
   object-fit: contain;
+
+  @media screen and (max-width: 600px) {
+    padding: 20px 0;
+  }
 
   img {
     height: 100%;
