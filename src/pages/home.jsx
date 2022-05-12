@@ -32,7 +32,7 @@ function Home() {
               </p>
               <div>*/</div>
             </AboutContent>
-            <Contact>Contact</Contact>
+            <Contact>Contact me</Contact>
           </About>
         </Box>
       </CodeContainer>
@@ -93,7 +93,7 @@ const Content = styled.div`
   }
 
   p {
-    color: ${props => props.theme.primaryColor};
+    color: ${props => props.theme.typeColor};
     font-size: 22px;
   }
 
@@ -113,9 +113,9 @@ const CodeContainer = styled.div`
 const About = styled.div`
   width: 450px;
   background: ${(props) => props.theme.bodyOffSet};
+  backdrop-filter: ${(props) => props.theme.backdrop};
   border-radius: 10px;
   padding: 20px 0;
-
   @media screen and (max-width: 600px) {
     width: 100%;
     padding: 20px;

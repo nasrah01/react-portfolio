@@ -61,6 +61,13 @@ const Buttons = styled.div`
     border-radius: 6.5px;
     margin: 0 5px;
     background: black;
+
+    @media screen and (max-width: 600px) {
+      height: 10px;
+      width: 10px;
+      border-radius: 5px;
+      margin: 0 3px;
+    }
   }
 `;
 
@@ -69,7 +76,6 @@ const NavBoxes = styled.ul`
   align-items: center;
   background: ${(props) => props.theme.bodyOffSet};
   list-style-type: none;
-
 
   a {
     text-decoration: none;
@@ -82,6 +88,7 @@ const NavBoxes = styled.ul`
       font-size: 12px;
       padding: 10px;
       width: 100%;
+      text-align: center;
     }
   }
 

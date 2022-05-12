@@ -44,7 +44,6 @@ const SideBar = styled.div`
   flex: 20%;
   border-right: ${(props) => props.theme.border};
   border-top: ${(props) => props.theme.border};
-  border-left: ${(props) => props.theme.border};
 `;
 
 const SidebarHeader = styled.div`

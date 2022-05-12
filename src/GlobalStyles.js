@@ -56,26 +56,30 @@ export const darkTheme = {
   body: "#101423",
   bodyOffSet: "#000",
   textColor: "#fff",
+  typeColor: "rgba(189, 164, 203, .2)",
   primaryColor: "#637383", //grey
   secondaryColor: "#cc7000", //orange
   tertiaryColor: "#098bdc", // blue
   boldColor: "#663399",
-  boxShadow: "rgba(38, 57, 77, .4) 0px 30px 90px;",
+  boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
   opacity: ".7",
-  border: "1px solid #1a1a1a",
-  borderColor: "#1a1a1a",
+  border: "1px solid #666666",
+  borderColor: "#666666",
 };
 
 export const lightTheme = {
-  body: "#fff",
-  bodyOffSet: "#eff5f5",
-  textColor: "#000000",
-  primaryColor: "#637383", //gray
-  secondaryColor: "#333333", //orange
-  tertiaryColor: " #2251dd", //blue
-  boldColor: "#FF605C", //red
-  boxShadow: "rgba(95, 158, 160, 0.4) 0px 10px 40px;",
-  opacity: "1",
-  border: "1px solid #bfbfbf",
-  borderColor: "fff",
+  body: "#f9f1e9",
+  bodyOffSet: "#eee1d4",
+  textColor: "#1a1a1a",
+  typeColor: "#8b99a7",
+  primaryColor: "#172436",
+  secondaryColor: "#554a55", 
+  tertiaryColor: "#b1365b", 
+  boldColor: "#c4aed0", 
+  boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
+  opacity: ".9",
+  border: "1px solid #77506720",
+  borderColor: "#77506720",
 };
+
+// box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;

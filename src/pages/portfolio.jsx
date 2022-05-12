@@ -19,6 +19,11 @@ export default Portfolio;
 const Projects = styled.div`
   display: flex;
   flex: 1;
+  padding: 50px;
+
+  @media screen and (max-width: 600px) {
+    padding: 20px 0;
+  }
 `
 
 const Container = styled.div`

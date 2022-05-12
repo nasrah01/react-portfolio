@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { MdOutlineKeyboardArrowDown, MdOutlineMail } from "react-icons/md";
 
 
 const Contact = () => {
@@ -22,11 +23,27 @@ const Contact = () => {
 
   return (
     <ContactContainer>
+      <ContactSidebar>
+        <ContactHeader>
+          <MdOutlineKeyboardArrowDown />
+          <h2>Contact Me</h2>
+        </ContactHeader>
+        <ContactInfo>
+          <p>
+            I&apos;d love to here from you, leave me a message or shoot me an
+            email
+          </p>
+          <ContactMail>
+            <MdOutlineMail size={18}/>
+            <p>contact@nasrah.dev</p>
+          </ContactMail>
+        </ContactInfo>
+      </ContactSidebar>
       <FormContainer>
         <Form ref={form} onSubmit={sendEmail}>
           <FormInput>
             <label htmlFor="name">_name:</label>
-            <input type="text" name="name"/>
+            <input type="text" name="name" />
           </FormInput>
           <FormInput>
             <label htmlFor="email">_email:</label>
@@ -40,8 +57,11 @@ const Contact = () => {
             <label htmlFor="message">_message:</label>
             <textarea rows="5" name="message"></textarea>
           </FormInput>
-          <button type="submit" value='send'>Send</button>
+          <button type="submit" value="send">
+            Send
+          </button>
         </Form>
+        
       </FormContainer>
     </ContactContainer>
   );
@@ -52,15 +72,54 @@ export default Contact;
 const ContactContainer = styled.div`
   flex: 1;
   display: flex;
-  justify-content: center;
-  align-items: center;
 
-  @media screen and (max-height: 800px) {
-    margin: 40px 0;
+  @media screen and (max-width: 700px) {
+    flex-direction: column;
+  }
+`;
+
+const ContactSidebar = styled.div`
+  flex: 20%;
+  border-right: ${(props) => props.theme.border};
+  border-top: ${(props) => props.theme.border};
+  background: ${(props) => props.theme.bodyOffSet};
+  padding: 20px 10px;
+`;
+
+const ContactHeader = styled.div`
+  display: flex;
+  align-items: flex-start;
+
+  h2 {
+    font-size: 12px;
+    font-weight:  700;
+    text-transform: uppercase;
+  }
+`
+
+const ContactInfo = styled.div`
+  font-size: 14px;
+  padding: 10px 20px;
+  color: ${(props) => props.theme.primaryColor};
+`;
+
+const ContactMail = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+  color: ${(props) => props.theme.primaryColor};
+
+  p {
+    padding-left: 5px;
   }
 `;
 
 const FormContainer = styled.div`
+  flex: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   @media screen and (max-width: 600px) {
     width: 100%;
     padding: 0 30px;
@@ -68,14 +127,12 @@ const FormContainer = styled.div`
 `;
 
 const Form = styled.form`
-  border: ${(props) => props.theme.border};
   box-shadow: ${(props) => props.theme.boxShadow};
   padding: 30px;
   border-radius: 10px;
 
   button {
     background-color: ${(props) => props.theme.body};
-
     border: 1.5px solid ${(props) => props.theme.primaryColor};
     color: ${(props) => props.theme.primaryColor};
     border-radius: 5px;
@@ -83,8 +140,14 @@ const Form = styled.form`
     margin: 20px 0;
   }
 
+  @media screen and (max-width: 700px) {
+    margin: 80px 0;
+  }
+
   @media screen and (max-width: 600px) {
     width: 100%;
+    margin: 40px 0;
+    padding: 10px;
   }
 `;
 
@@ -105,8 +168,8 @@ const FormInput = styled.div`
     border-radius: 5px;
     outline: none;
     border: none;
-    border: ${(props) => props.theme.border};
-    background-color: ${(props) => props.theme.bodyOffSet};
+    border-bottom: 2px solid ${(props) => props.theme.bodyOffSet};
+    background-color: ${(props) => props.theme.body};
     color: ${(props) => props.theme.textColor};
 
     @media screen and (max-width: 600px) {
