@@ -12,7 +12,7 @@ const Footer = () => {
     </FooterContact>
     <FooterDate>
       <BiCopyright  size={20}/>
-      <p>2001 Nasrah Abraham</p>
+      <p>2022 Nasrah Abraham</p>
       </FooterDate>
   </FooterContainer>
   )
@@ -36,7 +36,7 @@ const FooterContainer = styled.div`
 const FooterContact = styled.div`
   display: flex;
   align-items: center;
-`
+`;
 
 const Title = styled.div`
   border-right: ${props => props.theme.border};
@@ -49,8 +49,8 @@ const Mail = styled.div`
 `;
 
 const Icon = styled.div`
- padding: 0 10px;
-`
+  padding: 0 10px;
+`;
 
 const FooterDate = styled.div`
   display: flex;

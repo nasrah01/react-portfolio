@@ -44,6 +44,10 @@ const SideBar = styled.div`
   flex: 20%;
   border-right: ${(props) => props.theme.border};
   border-top: ${(props) => props.theme.border};
+
+  @media screen and (max-width: 600px) {
+    border-right: none;
+  }
 `;
 
 const SidebarHeader = styled.div`

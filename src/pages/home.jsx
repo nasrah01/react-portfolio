@@ -52,7 +52,7 @@ const Container = styled.div`
 
   @media screen and (max-width: 1054px) {
     flex-direction: column;
-    padding-bottom: 20px;
+    padding-bottom: 100px;
   }
 `;
 
@@ -95,6 +95,7 @@ const Content = styled.div`
   p {
     color: ${props => props.theme.typeColor};
     font-size: 22px;
+    line-height: 1.6;
   }
 
   p::first-letter {
@@ -147,6 +148,7 @@ const Box = styled.div`
   h3 {
     padding-bottom: 20px;
     color: ${(props) => props.theme.secondaryColor};
+    font-weight: 600;
   }
 `;
 

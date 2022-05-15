@@ -62,7 +62,7 @@ export const darkTheme = {
   tertiaryColor: "#098bdc", // blue
   boldColor: "#663399",
   boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
-  opacity: ".7",
+  opacity: "1",
   border: "1px solid #666666",
   borderColor: "#666666",
 };
@@ -73,9 +73,9 @@ export const lightTheme = {
   textColor: "#1a1a1a",
   typeColor: "#8b99a7",
   primaryColor: "#172436",
-  secondaryColor: "#554a55", 
-  tertiaryColor: "#b1365b", 
-  boldColor: "#c4aed0", 
+  secondaryColor: "#372f37",
+  tertiaryColor: "#b1365b",
+  boldColor: "#c4aed0",
   boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
   opacity: ".9",
   border: "1px solid #77506720",

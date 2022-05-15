@@ -49,6 +49,7 @@ const Box = styled.div`
 const Header = styled.div`
   color: ${props => props.theme.secondaryColor};
   padding: 0 20px 10px 20px;
+  font-weight: 600;
 `;
 
 const Border = styled.div`

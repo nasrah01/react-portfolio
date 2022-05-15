@@ -6,9 +6,6 @@ import {
  } from "react-icons/md";
  import { DiReact } from 'react-icons/di'
 
-console.log(skillSet)
-
-
 const Skill = () => {
   return (
     <SkillBox>

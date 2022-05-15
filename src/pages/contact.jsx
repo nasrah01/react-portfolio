@@ -1,25 +1,27 @@
 import styled from "styled-components"
-import { useRef } from "react";
+import { useForm } from "react-hook-form";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { MdOutlineKeyboardArrowDown, MdOutlineMail } from "react-icons/md";
 
 
 const Contact = () => {
-
-
   const form = useRef();
+  const { register, reset, formState: { errors }, handleSubmit } = useForm();
+  const [isSubmit, setIsSubmit] = useState(false)
 
-  const sendEmail = (e) => {
-    e.preventDefault();
+  const sendEmail = (formData) => {
+    setIsSubmit(true);
 
     emailjs.sendForm('service_up6y4mq', 'template_2o21u6l', form.current, '00dUGjViC-sqVuNuT')
-      .then((result) => {
-          console.log(result.text);
-      }, (error) => {
-          console.log(error.text);
-      });
+    .then((result) => {
+        console.log(result.text);
+    }, (error) => {
+        console.log(error.text);
+    }); 
+    
+    reset();
   };
-
 
   return (
     <ContactContainer>
@@ -34,34 +36,64 @@ const Contact = () => {
             email
           </p>
           <ContactMail>
-            <MdOutlineMail size={18}/>
+            <MdOutlineMail size={18} />
             <p>contact@nasrah.dev</p>
           </ContactMail>
         </ContactInfo>
       </ContactSidebar>
       <FormContainer>
-        <Form ref={form} onSubmit={sendEmail}>
+        {isSubmit && (
+          <Success>
+            <p>Thank you, your message has been sent!</p>
+          </Success>
+        )}
+        <Form ref={form} onSubmit={handleSubmit(sendEmail)}>
           <FormInput>
             <label htmlFor="name">_name:</label>
-            <input type="text" name="name" />
+            <input
+              type="text"
+              name="name"
+              {...register("name", { required: true })}
+            />
+            {errors.name && <span>*Fill in your name</span>}
           </FormInput>
           <FormInput>
             <label htmlFor="email">_email:</label>
-            <input type="email" name="email" />
+            <input
+              type="text"
+              name="email"
+              {...register("email", {
+                required: "*Please enter your email",
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: "*Invalid email",
+                },
+              })}
+            />
+            {errors.email && <span>{errors.email.message}</span>}
           </FormInput>
           <FormInput>
             <label htmlFor="subject">_subject:</label>
-            <input type="text" name="subject" />
+            <input
+              type="text"
+              name="subject"
+              {...register("subject", { required: true })}
+            />
+            {errors.subject && <span>*Enter a subject</span>}
           </FormInput>
           <FormInput>
             <label htmlFor="message">_message:</label>
-            <textarea rows="5" name="message"></textarea>
+            <textarea
+              rows="5"
+              name="message"
+              {...register("message", { required: true })}
+            ></textarea>
+            {errors.message && <span>*Leave me a message!</span>}
           </FormInput>
           <button type="submit" value="send">
             Send
           </button>
         </Form>
-        
       </FormContainer>
     </ContactContainer>
   );
@@ -84,6 +116,10 @@ const ContactSidebar = styled.div`
   border-top: ${(props) => props.theme.border};
   background: ${(props) => props.theme.bodyOffSet};
   padding: 20px 10px;
+
+  @media screen and (max-width: 700px) {
+    border-right: none;
+  }
 `;
 
 const ContactHeader = styled.div`
@@ -117,12 +153,31 @@ const ContactMail = styled.div`
 const FormContainer = styled.div`
   flex: 80%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
   @media screen and (max-width: 600px) {
     width: 100%;
     padding: 0 30px;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 100%;
+    padding: 0 10px;
+  }
+`;
+
+const Success = styled.div`
+  color: ${props => props.theme.textColor};
+  padding-bottom: 30px;
+
+  @media screen and (max-width: 700px) {
+    margin-top: 80px;
+  }
+
+  @media screen and (max-width: 600px) {
+    margin-top: 40px;
   }
 `;
 
@@ -137,16 +192,16 @@ const Form = styled.form`
     color: ${(props) => props.theme.primaryColor};
     border-radius: 5px;
     padding: 10px 30px;
-    margin: 20px 0;
+    margin: 20px 10px;
   }
 
   @media screen and (max-width: 700px) {
-    margin: 80px 0;
+    margin-bottom: 80px;
   }
 
   @media screen and (max-width: 600px) {
     width: 100%;
-    margin: 40px 0;
+    margin-bottom: 40px;
     padding: 10px;
   }
 `;
@@ -155,6 +210,13 @@ const FormInput = styled.div`
   display: flex;
   flex-direction: column;
   padding: 10px 0;
+
+  span {
+    color: ${(props) => props.theme.tertiaryColor};
+    font-size: 12px;
+    padding: 10px;
+    font-weight: 600;
+  }
 
   label {
     padding: 5px;
@@ -171,6 +233,7 @@ const FormInput = styled.div`
     border-bottom: 2px solid ${(props) => props.theme.bodyOffSet};
     background-color: ${(props) => props.theme.body};
     color: ${(props) => props.theme.textColor};
+    font-size: 16px;
 
     @media screen and (max-width: 600px) {
       width: 100%;
@@ -181,4 +244,5 @@ const FormInput = styled.div`
   textarea:focus {
     border: 2px solid ${(props) => props.theme.tertiaryColor};
   }
-`;
+`; 
+    
