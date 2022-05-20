@@ -4,18 +4,30 @@ import { BiCopyright } from "react-icons/bi";
 
 const Footer = () => {
   return (
-  <FooterContainer>
-    <FooterContact>
-      <Title>Find Me</Title>
-      <Mail>contact@nasrah.dev</Mail>
-      <Icon><AiFillGithub size={20}/></Icon>
-    </FooterContact>
-    <FooterDate>
-      <BiCopyright  size={20}/>
-      <p>2022 Nasrah Abraham</p>
+    <FooterContainer>
+      <FooterContact>
+        <Title>Find Me</Title>
+        <Mail>
+          <a href="mailto:contact@nasrah.dev" target="_blank" rel="noreferrer">
+            contact@nasrah.dev
+          </a>
+        </Mail>
+        <Icon>
+          <a
+            href="https://github.com/nasrah01"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <AiFillGithub size={20} />
+          </a>
+        </Icon>
+      </FooterContact>
+      <FooterDate>
+        <BiCopyright size={20} />
+        <p>2022 Nasrah Abraham</p>
       </FooterDate>
-  </FooterContainer>
-  )
+    </FooterContainer>
+  );
 };
 
 export default Footer;
@@ -39,17 +51,43 @@ const FooterContact = styled.div`
 `;
 
 const Title = styled.div`
-  border-right: ${props => props.theme.border};
+  border-right: ${(props) => props.theme.border};
   padding: 10px;
 `;
 
 const Mail = styled.div`
   border-right: ${(props) => props.theme.border};
   padding: 10px;
+  cursor: pointer;
+
+  a {
+    text-decoration: none;
+  }
+
+  a:link,
+  a:visited {
+    color: ${(props) => props.theme.primaryColor};
+  }
+
+  a:hover,
+  a:focus {
+    color: ${(props) => props.theme.tertiaryColor};
+  }
 `;
 
 const Icon = styled.div`
   padding: 0 10px;
+  cursor: pointer;
+
+  a:link,
+  a:visited {
+    color: ${(props) => props.theme.primaryColor};
+  }
+
+  a:hover,
+  a:focus {
+    color: ${(props) => props.theme.tertiaryColor};
+  }
 `;
 
 const FooterDate = styled.div`

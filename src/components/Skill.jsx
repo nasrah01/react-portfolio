@@ -4,14 +4,14 @@ import {
   MdOutlineKeyboardArrowRight,
   MdOutlineKeyboardArrowDown
  } from "react-icons/md";
- import { DiReact } from 'react-icons/di'
+ import { AiTwotoneFolderOpen } from "react-icons/ai";
 
 const Skill = () => {
   return (
     <SkillBox>
       {skillSet.map((items, index) => (
-        <Item>
-          <Category key={index}>
+        <Item key= {index}>
+          <Category>
             <MdOutlineKeyboardArrowDown />
             <p>{items.title}</p>
           </Category>
@@ -20,9 +20,9 @@ const Skill = () => {
             <p>{items.category}</p>
           </Technology>
           {items.names.map((item, _index) => (
-            <Stack>
-              <DiReact />
-              <p key={_index}>{item}</p>
+            <Stack key={_index}>
+              <AiTwotoneFolderOpen />
+              <p>{item}</p>
             </Stack>
           ))}
         </Item>
@@ -69,4 +69,8 @@ const Stack = styled.div`
   align-items: center;
   padding: 1px 30px;
   color: ${(props) => props.theme.primaryColor};
+
+  p {
+    padding-left: 5px;
+  }
 `;

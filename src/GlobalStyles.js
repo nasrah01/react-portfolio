@@ -56,8 +56,9 @@ export const darkTheme = {
   body: "#101423",
   bodyOffSet: "#000",
   textColor: "#fff",
-  typeColor: "rgba(189, 164, 203, .2)",
-  primaryColor: "#637383", //grey
+  typeColor: "rgba(189, 164, 203, .5)",
+  linkColor: "#00e600",
+  primaryColor: "#99a6b2", //grey
   secondaryColor: "#cc7000", //orange
   tertiaryColor: "#098bdc", // blue
   boldColor: "#663399",
@@ -72,8 +73,9 @@ export const lightTheme = {
   bodyOffSet: "#eee1d4",
   textColor: "#1a1a1a",
   typeColor: "#8b99a7",
+  linkColor: "#0000e6",
   primaryColor: "#172436",
-  secondaryColor: "#372f37",
+  secondaryColor: "#1A5363",
   tertiaryColor: "#b1365b",
   boldColor: "#c4aed0",
   boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",

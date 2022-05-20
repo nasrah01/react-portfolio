@@ -96,8 +96,12 @@ const Path = styled.div`
 
 const Description = styled.div`
   padding: 20px 0;
-  color: ${props => props.theme.primaryColor};
+  color: ${(props) => props.theme.primaryColor};
   margin-bottom: 10px;
+
+  @media screen and (max-width: 600px) {
+    font-size: 14px;
+  }
 `;
 
 const Button = styled.div`

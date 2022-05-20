@@ -2,6 +2,8 @@
 import styled from 'styled-components'
 import { IconContext } from "react-icons"
 import { MdOutlineArrowForwardIos } from "react-icons/md"
+import Typewriter from "typewriter-effect";
+import { Link } from 'react-router-dom'
 
 function Home() {
   return (
@@ -14,25 +16,36 @@ function Home() {
         </Header>
         <IconContext.Provider value={{ className: "icon" }}>
           <Content>
-            <MdOutlineArrowForwardIos size={24} />
-            <p>All about high quality, high performance websites</p>
+            <MdOutlineArrowForwardIos size={32} />
+            <div>
+              <Typewriter
+                options={{
+                  strings: ["All about high quality", "high performance websites!"],
+                  pauseFor: (1500),
+                  autoStart: true,
+                  loop: true,
+                  deleteSpeed: (75),
+                }}
+              />
+            </div>
           </Content>
         </IconContext.Provider>
       </Hero>
       <CodeContainer>
         <Box>
-          <h3>About</h3>
+          <h3>Explore</h3>
           <About>
             <AboutContent>
-              <div>/** </div> 
-              <p>I build fun, responsive, and dynamic websites, and believe in
-              creating code that is readable, modular and organised. I like to
-              work with different technology stacks to build applications that are
-              scalable and efficient
+              <div>/** </div>
+              <p>
+                I build fun, responsive, and dynamic websites, and believe in
+                creating code that is readable, modular and organised. I like to
+                work with different technology stacks to build applications that
+                are scalable and efficient
               </p>
               <div>*/</div>
             </AboutContent>
-            <Contact>Contact me</Contact>
+            <Contact><Link to="/contact" style={{textDecoration:"none"}}>Contact me</Link></Contact>
           </About>
         </Box>
       </CodeContainer>
@@ -57,7 +70,7 @@ const Container = styled.div`
 `;
 
 const Hero = styled.div`
-  min-height: 600px;
+  min-height: 550px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -69,7 +82,7 @@ const Hero = styled.div`
 
   @media screen and (max-width: 600px) {
     min-height: 500px;
-    padding: 20px
+    padding: 20px;
   }
 `;
 
@@ -84,22 +97,18 @@ const Header = styled.div`
   }
 `;
 
-const Content = styled.div` 
+const Content = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 
-  @media screen and (max-width: 600px) {
-    align-items: flex-start;
-  }
-
-  p {
-    color: ${props => props.theme.typeColor};
+  div {
+    color: ${(props) => props.theme.typeColor};
     font-size: 22px;
     line-height: 1.6;
   }
 
-  p::first-letter {
-    border-bottom: 4px solid ${props => props.theme.boldColor};
+  div::first-letter {
+    border-bottom: 4px solid ${(props) => props.theme.boldColor};
   }
 `;
 
@@ -156,6 +165,9 @@ const Contact = styled.div`
   background: ${(props) => props.theme.secondaryColor};
   padding: 5px 20px;
   margin-bottom: 10px;
-  color: ${(props) => props.theme.bodyOffSet};
-  font-weight: 600;
+
+  a {
+    color: ${(props) => props.theme.bodyOffSet};
+    font-weight: 600;
+  }
 `;

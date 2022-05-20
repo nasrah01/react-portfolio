@@ -32,7 +32,7 @@ const Contact = () => {
         </ContactHeader>
         <ContactInfo>
           <p>
-            I&apos;d love to here from you, leave me a message or shoot me an
+            I&apos;d love to hear from you, leave me a message or shoot me an
             email
           </p>
           <ContactMail>
@@ -157,9 +157,14 @@ const FormContainer = styled.div`
   justify-content: center;
   align-items: center;
 
+  @media screen and (max-width: 700px) {
+    margin-top: 80px;
+  }
+
   @media screen and (max-width: 600px) {
     width: 100%;
     padding: 0 30px;
+    margin-top: 40px;
   }
 
   @media screen and (max-width: 500px) {
@@ -171,14 +176,6 @@ const FormContainer = styled.div`
 const Success = styled.div`
   color: ${props => props.theme.textColor};
   padding-bottom: 30px;
-
-  @media screen and (max-width: 700px) {
-    margin-top: 80px;
-  }
-
-  @media screen and (max-width: 600px) {
-    margin-top: 40px;
-  }
 `;
 
 const Form = styled.form`
