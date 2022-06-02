@@ -7,6 +7,7 @@ import Portfolio from './pages/portfolio'
 import Contact from "./pages/contact";
 import styled from 'styled-components'
 import Footer from "components/Footer";
+import ScrollToTop from "components/ScrollToTop";
 
 function App() {
 
@@ -16,12 +17,14 @@ function App() {
       <BrowserRouter basename="/">
         <Container>
           <NavBar />
+          <ScrollToTop>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/skills" element={<Skills />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
+          </ScrollToTop>
           <Footer />
         </Container>
       </BrowserRouter>

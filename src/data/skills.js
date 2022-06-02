@@ -7,7 +7,7 @@ export const skillSet = [
   {
     title: "styling",
     category: "css",
-    names: ["Sass", "Styled-components", "Tailwind", "React-bootstrap"],
+    names: ["Sass", "Styled-components", "Tailwind", "React-bootstrap", "Mui"],
   },
   {
     title: "server",

@@ -5,7 +5,7 @@ import emailjs from "@emailjs/browser";
 import { MdOutlineKeyboardArrowDown, MdOutlineMail } from "react-icons/md";
 
 
-const Contact = () => {
+const Contact = (props) => {
   const form = useRef();
   const { register, reset, formState: { errors }, handleSubmit } = useForm();
   const [isSubmit, setIsSubmit] = useState(false)
@@ -113,7 +113,6 @@ const ContactContainer = styled.div`
 const ContactSidebar = styled.div`
   flex: 20%;
   border-right: ${(props) => props.theme.border};
-  border-top: ${(props) => props.theme.border};
   background: ${(props) => props.theme.bodyOffSet};
   padding: 20px 10px;
 

@@ -69,19 +69,17 @@ export const darkTheme = {
 };
 
 export const lightTheme = {
-  body: "#f9f1e9",
-  bodyOffSet: "#eee1d4",
+  body: "#fafafa",
+  bodyOffSet: "#e2e6e9",
   textColor: "#1a1a1a",
   typeColor: "#8b99a7",
   linkColor: "#0000e6",
   primaryColor: "#172436",
-  secondaryColor: "#1A5363",
-  tertiaryColor: "#b1365b",
-  boldColor: "#c4aed0",
+  secondaryColor: "#446ca2",
+  tertiaryColor: "#1B21A6", // blue
+  boldColor: "#B4B6D9",
   boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
   opacity: ".9",
-  border: "1px solid #77506720",
-  borderColor: "#77506720",
+  border: "1px solid #c5ccd3",
+  borderColor: "#c5ccd3",
 };
-
-// box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;

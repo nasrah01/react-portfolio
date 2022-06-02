@@ -31,7 +31,7 @@ const Project = () => {
 export default Project
 
 const Box = styled.div`
-  min-width: 500px;
+  max-width: 600px;
   padding: 0 30px;
   a {
     text-decoration: none;

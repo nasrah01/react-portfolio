@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Project from '../components/Project'
 
-const Portfolio = () => {
+const Portfolio = (props) => {
   return (
     <Projects>
       <Container>

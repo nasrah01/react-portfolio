@@ -11,9 +11,9 @@ const ThemeToggle = () => {
     <ToggleContainer onClick={toggleTheme} className="btn">
       <Icon>
         {isLightTheme ? (
-          <BiMoon size={24} />
+          <BiMoon />
         ) : (
-          <BsSun size={24} />
+          <BsSun />
         )}
       </Icon>
     </ToggleContainer>
@@ -28,5 +28,20 @@ const ToggleContainer = styled.div`
 `;
 
 const Icon = styled.div`
-  color: ${(props) => props.theme.primaryColor}
+  color: ${(props) => props.theme.primaryColor};
+  font-size: 24px;
+  background-color: ${(props) => props.theme.bodyOffSet};
+  border-radius: 7px;
+  padding: 7px;
+  display: flex;
+  align-items: center;
+  transition: all .5s ease;
+
+  &:hover {
+    color: ${(props) => props.theme.secondaryColor};
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 20px;
+  }
 `;

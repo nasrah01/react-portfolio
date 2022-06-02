@@ -38,6 +38,10 @@ const NavContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
+  -webkit-box-shadow: 0 4px 6px -6px #222;
+  -moz-box-shadow: 0 4px 6px -6px #222;
+  box-shadow: 0 4px 6px -6px #222;
+  margin-bottom: 2px;
 `;
 
 const Title = styled.div`

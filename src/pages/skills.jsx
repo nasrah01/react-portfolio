@@ -3,7 +3,7 @@ import Skill from '../components/Skill'
 import { AboutSet } from "data/skills";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
-const Skills = () => {
+const Skills = (props) => {
   return (
     <Container>
       <SideBar>
@@ -67,7 +67,6 @@ const SideBar = styled.div`
   background: ${(props) => props.theme.bodyOffSet};
   flex: 20%;
   border-right: ${(props) => props.theme.border};
-  border-top: ${(props) => props.theme.border};
 
   @media screen and (max-width: 600px) {
     border-right: none;

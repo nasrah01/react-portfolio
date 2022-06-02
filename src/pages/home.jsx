@@ -5,7 +5,7 @@ import { MdOutlineArrowForwardIos } from "react-icons/md"
 import Typewriter from "typewriter-effect";
 import { Link } from 'react-router-dom'
 
-function Home() {
+function Home(props) {
   return (
     <Container>
       <Hero>
