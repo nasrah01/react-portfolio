@@ -189,6 +189,12 @@ const Form = styled.form`
     border-radius: 5px;
     padding: 10px 30px;
     margin: 20px 10px;
+    cursor: pointer;
+    transition: 0.5 ease;
+
+    &:hover {
+      border: 2px solid ${(props) => props.theme.tertiaryColor};
+    }
   }
 
   @media screen and (max-width: 700px) {

@@ -2,7 +2,7 @@ export const skillSet = [
   {
     title: "client",
     category: "src",
-    names: ["Javascript", "React", "Redux", "Typescript", "Next.js", "GraphQl"],
+    names: ["Javascript", "React", "Redux", "Typescript", "GraphQl"],
   },
   {
     title: "styling",

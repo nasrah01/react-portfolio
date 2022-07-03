@@ -38,9 +38,9 @@ const NavContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-  -webkit-box-shadow: 0 4px 6px -6px #222;
-  -moz-box-shadow: 0 4px 6px -6px #222;
-  box-shadow: 0 4px 6px -6px #222;
+  -webkit-box-shadow: 0 4px 6px -6px #cecaca;
+  -moz-box-shadow: 0 4px 6px -6px #cecaca;
+  box-shadow: 0 4px 6px -6px #cecaca;
   margin-bottom: 2px;
 `;
 

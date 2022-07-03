@@ -58,9 +58,9 @@ export const darkTheme = {
   textColor: "#fff",
   typeColor: "rgba(189, 164, 203, .5)",
   linkColor: "#00e600",
-  primaryColor: "#99a6b2", //grey
-  secondaryColor: "#cc7000", //orange
-  tertiaryColor: "#098bdc", // blue
+  primaryColor: "#99a6b2", 
+  secondaryColor: "#cc7000", 
+  tertiaryColor: "#098bdc", 
   boldColor: "#663399",
   boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
   opacity: "1",
@@ -70,16 +70,16 @@ export const darkTheme = {
 
 export const lightTheme = {
   body: "#fafafa",
-  bodyOffSet: "#e2e6e9",
+  bodyOffSet: "#edf2f7",
   textColor: "#1a1a1a",
   typeColor: "#8b99a7",
   linkColor: "#0000e6",
   primaryColor: "#172436",
   secondaryColor: "#446ca2",
-  tertiaryColor: "#1B21A6", // blue
+  tertiaryColor: "#e6007a",
   boldColor: "#B4B6D9",
   boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
   opacity: ".9",
-  border: "1px solid #c5ccd3",
-  borderColor: "#c5ccd3",
+  border: "1px solid #d3d9de",
+  borderColor: "#d3d9de",
 };

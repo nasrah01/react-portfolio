@@ -8,7 +8,7 @@ export const ProjectSet = [
     image: img01,
     projectLink: "https://grand-lokum-45486f.netlify.app/",
     description:
-      "Built with React and Redux, consuming RESTapi to generate data.",
+      "Built with React, Redux, Sanity, Node.js, css, and material ui",
     codeLink: "https://github.com/nasrah01/react-ecommerce",
   },
   {

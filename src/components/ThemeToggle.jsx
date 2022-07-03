@@ -24,13 +24,11 @@ export default ThemeToggle
 
 const ToggleContainer = styled.div`
   padding: 0 10px;
-  border: 1px sild ${props => props.theme.borderColor};
 `;
 
 const Icon = styled.div`
   color: ${(props) => props.theme.primaryColor};
   font-size: 24px;
-  background-color: ${(props) => props.theme.bodyOffSet};
   border-radius: 7px;
   padding: 7px;
   display: flex;
