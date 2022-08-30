@@ -17,7 +17,7 @@ export const skillSet = [
   {
     title: "tools",
     category: "development",
-    names: ["VS code", "github", "browser dev tools"],
+    names: ["VS code", "github", "browser dev tools", "google cloud", "docker", "postman"],
   },
 ];
 

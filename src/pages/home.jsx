@@ -115,10 +115,19 @@ const Content = styled.div`
 
 const CodeContainer = styled.div`
   height: 100%;
-  border: ${(props) => props.theme.border};
-  border-radius: 10px;
+  //border: ${(props) => props.theme.border};
+  //border-radius: 10px;
   padding: 20px;
-  box-shadow: ${props => props.theme.boxShadow};
+  //box-shadow: ${(props) => props.theme.boxShadow};
+  /* From https://css.glass */
+  /* From https://css.glass */
+  /* From https://css.glass */
+  background: rgba(111, 140, 226, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(111, 140, 226, 0.02);
 `;
 
 const About = styled.div`
