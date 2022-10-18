@@ -134,13 +134,19 @@ const NavToggle = styled.div`
      color: ${(props) => props.theme.primaryColor};
      padding: 10px 45px;
      border-right: 1px solid ${(props) => props.theme.borderColor};
+
+     @media screen and (max-width: 700px) {
+       padding: 10px;
+       width: 50%;
+       text-align: center;
+     }
+   }
+
+   li {
      font-size: 14px;
 
-     @media screen and (max-width: 600px) {
-       font-size: 12px;
-       padding: 10px;
-       width: 100%;
-       text-align: center;
+     @media screen and (max-width: 700px) {
+       font-size: 24px;
      }
    }
 
@@ -148,6 +154,7 @@ const NavToggle = styled.div`
      background: ${(props) => props.theme.body};
      color: ${(props) => props.theme.secondaryColor};
      border: none;
+     width: 50%;
      border-top: 3px solid #ff605c;
    }
 

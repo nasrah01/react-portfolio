@@ -122,7 +122,7 @@ const CodeContainer = styled.div`
   /* From https://css.glass */
   /* From https://css.glass */
   /* From https://css.glass */
-  background: rgba(111, 140, 226, 0.2);
+  background: #171d33;
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
