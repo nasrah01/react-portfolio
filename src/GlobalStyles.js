@@ -55,12 +55,13 @@ import { createGlobalStyle } from "styled-components";
 export const darkTheme = {
   body: "#101423",
   bodyOffSet: "#000",
+  bodyTrio: "#171d33",
   textColor: "#fff",
   typeColor: "rgba(189, 164, 203, .5)",
   linkColor: "#00e600",
-  primaryColor: "#99a6b2", 
-  secondaryColor: "#cc7000", 
-  tertiaryColor: "#098bdc", 
+  primaryColor: "#99a6b2",
+  secondaryColor: "#cc7000",
+  tertiaryColor: "#098bdc",
   boldColor: "#663399",
   boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
   opacity: "1",
@@ -70,7 +71,8 @@ export const darkTheme = {
 
 export const lightTheme = {
   body: "#fafafa",
-  bodyOffSet: "#edf2f7",
+  bodyOffSet: "#f2f2f2",
+  bodyTrio: " #e6e6e6",
   textColor: "#1a1a1a",
   typeColor: "#8b99a7",
   linkColor: "#0000e6",

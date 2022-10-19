@@ -122,7 +122,7 @@ const CodeContainer = styled.div`
   /* From https://css.glass */
   /* From https://css.glass */
   /* From https://css.glass */
-  background: #171d33;
+  background: ${(props) => props.theme.bodyTrio};
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
