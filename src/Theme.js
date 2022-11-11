@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { createContext, useState } from 'react'
 import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "./GlobalStyles";
@@ -8,11 +9,15 @@ export const ThemeContext = createContext({
 })
 
 const Theme = ({ children }) => {
-  const [themeMode, setThemeMode ] = useState();
+  const [themeMode, setThemeMode ] = useState(localStorage.getItem('background') || 'dark');
 
    const toggleTheme = () => {
      themeMode === "light" ? setThemeMode("dark") : setThemeMode("light");
    };
+
+   useEffect(() => {
+    localStorage.setItem("background", themeMode);
+   }, [themeMode])
 
   return (
     <ThemeContext.Provider value={{ isLightTheme: themeMode, toggleTheme }}>

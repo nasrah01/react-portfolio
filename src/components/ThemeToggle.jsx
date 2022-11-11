@@ -10,7 +10,7 @@ const ThemeToggle = () => {
   return (
     <ToggleContainer onClick={toggleTheme} className="btn">
       <Icon>
-        {isLightTheme ? (
+        {isLightTheme === 'light' ? (
           <BiMoon />
         ) : (
           <BsSun />
