@@ -26,42 +26,10 @@ import { createGlobalStyle } from "styled-components";
     font-family: 'Karma', serif;
     background: ${(props) => props.theme.body};
     color: ${(props) => props.theme.textColor};
-    transition: all .5s ease;
     letter-spacing: .5px;
-
-    position: relative;
-    overflow: hidden;
-
-     &::before {
-    position: absolute;
-    content: "";
-    width: 60%;
-    height: 70%;
-    opacity: 0.5;
-    background: linear-gradient(90deg, #b390dc, #931010);
-    border-radius: 50%;
-    left: -15%;
-    bottom: 0%;
-    filter: blur(100px);
-  }
-
-  &::after {
-    position: absolute;
-    content: "";
-    width: 80%;
-    height: 80%;
-    opacity: 0.5;
-    background: radial-gradient(ellipse at top, #0d6b27, transparent),
-      radial-gradient(ellipse at bottom, #5d79d3, transparent);
-    border-radius: 50%;
-    right: -15%;
-    top: -20%;
-    filter: blur(100px);
-  }
   }
 
   .btn {
-    transition: all .5s ease;
     border-radius: 50px;
     cursor: pointer;
   }

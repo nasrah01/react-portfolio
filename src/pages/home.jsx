@@ -130,6 +130,10 @@ const CodeContainer = styled.div`
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(111, 140, 226, 0.02);
+
+  @media screen and (max-width: 600px) {
+    margin: 0 30px;
+  }
 `;
 
 const About = styled.div`

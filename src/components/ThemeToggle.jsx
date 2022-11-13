@@ -35,10 +35,6 @@ const Icon = styled.div`
   align-items: center;
   transition: all .5s ease;
 
-  &:hover {
-    color: ${(props) => props.theme.secondaryColor};
-  }
-
   @media screen and (max-width: 480px) {
     font-size: 20px;
   }

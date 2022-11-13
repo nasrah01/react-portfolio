@@ -128,10 +128,11 @@ const ContactHeader = styled.div`
 
   h2 {
     font-size: 12px;
-    font-weight:  700;
+    font-weight: 700;
     text-transform: uppercase;
+    color: ${(props) => props.theme.tertiaryColor};
   }
-`
+`;
 
 const ContactInfo = styled.div`
   font-size: 14px;

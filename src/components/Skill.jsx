@@ -54,7 +54,7 @@ const Category = styled.div`
   display: flex;
   align-items: center;
   padding: 3px 0;
-  color: ${props => props.theme.textColor};
+  color: ${props => props.theme.plain};
 `
 
 const Technology = styled.div`
