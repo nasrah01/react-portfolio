@@ -57,17 +57,20 @@ function Home(props) {
 export default Home
 
 const Container = styled.div`
+
   flex: 1;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
   padding-top: 20px;
+  z-index: ${(props) => props.theme.zindex};
 
   @media screen and (max-width: 1054px) {
     flex-direction: column;
     padding-bottom: 100px;
   }
+  
 `;
 
 const Hero = styled.div`
@@ -90,6 +93,11 @@ const Hero = styled.div`
 const Header = styled.div`
   h1 {
     font-size: 42px;
+    color: ${(props) => props.theme.plain};
+  }
+
+  p {
+    color: ${(props) => props.theme.plain};
   }
 
   h2 {
@@ -115,13 +123,7 @@ const Content = styled.div`
 
 const CodeContainer = styled.div`
   height: 100%;
-  //border: ${(props) => props.theme.border};
-  //border-radius: 10px;
   padding: 20px;
-  //box-shadow: ${(props) => props.theme.boxShadow};
-  /* From https://css.glass */
-  /* From https://css.glass */
-  /* From https://css.glass */
   background: ${(props) => props.theme.bodyTrio};
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);

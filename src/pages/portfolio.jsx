@@ -20,11 +20,12 @@ const Projects = styled.div`
   display: flex;
   flex: 1;
   padding: 50px;
+  z-index: ${(props) => props.theme.zindex};
 
   @media screen and (max-width: 600px) {
     padding: 20px 0;
   }
-`
+`;
 
 const Container = styled.div`
   display: flex;
@@ -36,6 +37,7 @@ const Container = styled.div`
 
 const Header = styled.h2`
   padding: 30px;
+  color: ${(props) => props.theme.plain};
 `
 
 const Boxes = styled.div`

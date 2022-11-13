@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { AiFillGithub } from 'react-icons/ai'
 import { BiCopyright } from "react-icons/bi";
+import { FiLinkedin } from 'react-icons/fi'
 
 const Footer = () => {
   return (
@@ -21,6 +22,15 @@ const Footer = () => {
             <AiFillGithub size={20} />
           </a>
         </Icon>
+        <Icon>
+          <a
+            href="https://linkedin.com/in/nasrah-abraham-747826254"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FiLinkedin size={20} />
+          </a>
+        </Icon>
       </FooterContact>
       <FooterDate>
         <BiCopyright size={20} />
@@ -39,6 +49,7 @@ const FooterContainer = styled.div`
   font-size: 12px;
   display: flex;
   justify-content: space-between;
+  z-index: ${(props) => props.theme.zindex};
 
   @media screen and (max-width: 500px) {
     flex-direction: column;
@@ -76,8 +87,9 @@ const Mail = styled.div`
 `;
 
 const Icon = styled.div`
-  padding: 0 10px;
+  padding: 10px;
   cursor: pointer;
+  border-right: ${(props) => props.theme.border};
 
   a:link,
   a:visited {

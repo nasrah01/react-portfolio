@@ -57,11 +57,12 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   flex: 1;
+  z-index: ${(props) => props.theme.zindex};
 
   @media screen and (max-width: 600px) {
     flex-direction: column;
   }
-`
+`;
 
 const SideBar = styled.div`
   background: ${(props) => props.theme.bodyOffSet};
@@ -95,7 +96,6 @@ const SidebarTitle = styled.div`
 `;
 
 const About = styled.div`
-  background: ${props => props.theme.body};
   flex: 80%;
   display: flex;
   flex-direction: column;
@@ -103,10 +103,12 @@ const About = styled.div`
 `;
 
 const Header = styled.h2`
+  color: ${(props) => props.theme.plain};
+
   @media screen and (max-width: 600px) {
     font-size: 16px;
   }
-`
+`;
 
 const Text = styled.div`
   width: 600px;
@@ -138,8 +140,9 @@ const AboutDescription = styled.div`
 
 const Terminal = styled.div`
   height: 200px;
-  border-top: .3px solid ${props => props.theme.borderColor};
-`
+  border-top: 0.3px solid ${(props) => props.theme.borderColor};
+  color: ${(props) => props.theme.primaryColor};
+`;
 
 const TerminalTitles = styled.div`
   display: flex;
@@ -153,7 +156,7 @@ const TerminalTitles = styled.div`
   }
 
   p:first-child {
-    color: ${props => props.theme.textColor};
+    color: ${props => props.theme.plain};
     border-bottom: 1px solid ${props => props.theme.primaryColor};
   }
 `;

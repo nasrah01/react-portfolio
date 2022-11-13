@@ -60,11 +60,10 @@ const NavBar = () => {
 export default NavBar
 
 const NavContainer = styled.div`
+  background: ${(props) => props.theme.body};
   height: 100%;
-  -webkit-box-shadow: 0 4px 6px -6px #cecaca;
-  -moz-box-shadow: 0 4px 6px -6px #cecaca;
-  box-shadow: 0 4px 6px -6px #cecaca;
-  margin-bottom: 2px;
+  
+  z-index: 3;
 `;
 
 const Title = styled.div`
@@ -106,11 +105,11 @@ const NavToggle = styled.div`
   display: none;
 
   @media screen and (max-width: 700px) {
+    z-index: 3;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    z-index: 3;
     padding: 0 1rem 0 0.5rem;
     font-size: 20px;
     color: ${(props) => props.theme.primaryColor};
@@ -148,7 +147,6 @@ const NavToggle = styled.div`
      position: fixed;
      left: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
      top: 0;
-     z-index: 2;
      height: 100vh;
      flex-direction: column;
      justify-content: center;

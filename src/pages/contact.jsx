@@ -90,8 +90,8 @@ const Contact = (props) => {
             ></textarea>
             {errors.message && <span>*Leave me a message!</span>}
           </FormInput>
-          <button type="submit" value="send">
-            Send
+          <button type="submit" value="send" className="btn">
+            <div>Send Message</div>  
           </button>
         </Form>
       </FormContainer>
@@ -108,6 +108,7 @@ const ContactContainer = styled.div`
   @media screen and (max-width: 700px) {
     flex-direction: column;
   }
+  z-index: ${(props) => props.theme.zindex};
 `;
 
 const ContactSidebar = styled.div`
@@ -178,19 +179,24 @@ const Success = styled.div`
 `;
 
 const Form = styled.form`
-  box-shadow: ${(props) => props.theme.boxShadow};
   padding: 30px;
   border-radius: 10px;
 
   button {
+    font-family: "Karma", serif;
+    font-size: 18px;
     background-color: ${(props) => props.theme.body};
+    padding: 5px;
     border: 1.5px solid ${(props) => props.theme.primaryColor};
-    color: ${(props) => props.theme.primaryColor};
-    border-radius: 5px;
-    padding: 10px 30px;
-    margin: 20px 10px;
-    cursor: pointer;
-    transition: 0.5 ease;
+    color: ${(props) => props.theme.body};
+    margin: 30px 10px;
+
+    div {
+      margin: 0.5px;
+      padding: 10px 30px;
+      border-radius: 50px;
+      background-color: ${(props) => props.theme.plain};
+    }
 
     &:hover {
       border: 2px solid ${(props) => props.theme.tertiaryColor};
@@ -232,8 +238,8 @@ const FormInput = styled.div`
     border-radius: 5px;
     outline: none;
     border: none;
-    border-bottom: 2px solid ${(props) => props.theme.bodyOffSet};
-    background-color: ${(props) => props.theme.body};
+    border-bottom: 2px solid ${(props) => props.theme.primaryColor};
+    background-color: transparent;
     color: ${(props) => props.theme.textColor};
     font-size: 16px;
 
