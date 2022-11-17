@@ -70,8 +70,8 @@ export const darkTheme = {
 };
 
 export const lightTheme = {
-  body: "#fafafa",
-  bodyOffSet: "#f2f2f2",
+  body: "#f2f2f2",
+  bodyOffSet: "#fafafa",
   plain: "#000",
   bodyTrio: "#ffffff",
   textColor: "#1a1a1a",
