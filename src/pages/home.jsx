@@ -13,7 +13,7 @@ function Home(props) {
         <Header>
           <p>Hello! I am</p>
           <h1>Nasrah Abraham</h1>
-          <h2>front-end developer</h2>
+          <h2>developer</h2>
         </Header>
         <IconContext.Provider value={{ className: "icon" }}>
           <Content>
@@ -21,7 +21,7 @@ function Home(props) {
             <div>
               <Typewriter
                 options={{
-                  strings: ["All about high quality", "high performance websites!"],
+                  strings: ["All about high quality", "high performance applications!"],
                   pauseFor: (1500),
                   autoStart: true,
                   loop: true,
@@ -39,8 +39,8 @@ function Home(props) {
             <AboutContent>
               <div>/** </div>
               <p>
-                I build fun, responsive, and dynamic websites, and believe in
-                creating code that is readable, modular and organised. I like to
+                I build responsive, and dynamic websites, and believe in
+                creating code that is readable, modular and organised. I
                 work with different technology stacks to build applications that
                 are scalable and efficient
               </p>
