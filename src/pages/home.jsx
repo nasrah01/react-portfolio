@@ -21,7 +21,7 @@ function Home(props) {
             <div>
               <Typewriter
                 options={{
-                  strings: ["All about high quality", "high performance applications!"],
+                  strings: ["All about high quality", "high performance apps!"],
                   pauseFor: (1500),
                   autoStart: true,
                   loop: true,
