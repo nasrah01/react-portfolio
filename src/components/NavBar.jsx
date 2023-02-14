@@ -114,6 +114,10 @@ const NavContainer = styled.div`
   justify-content: space-between;
   padding: 4rem calc(28px + 1.5625vw);
   color: ${(props) => props.theme.primaryText};
+
+  @media screen and (max-width: 500px) {
+    padding: 4rem 2rem;
+  }
 `;
 
 const Name = styled.h2`
@@ -135,7 +139,7 @@ const NavToggle = styled.div`
   display: flex;
   align-items: center;
   transition: all 0.5s ease;
-  z-index: 3;
+  z-index: 3000;
   cursor: pointer;
 `;
 
@@ -171,7 +175,7 @@ const Copyright = styled.div`
 
  const NavLinks = styled.div`
    background: ${(props) => props.theme.lightPrimary};
-   width: 40vw;
+   width: 450px;
    position: fixed;
    right: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
    top: 0;
@@ -180,7 +184,12 @@ const Copyright = styled.div`
    flex-direction: column;
    justify-content: space-around;
    transition: 0.5s;
-   border-bottom: 2px solid ${props => props.theme.brightColor};
+   border-bottom: 2px solid ${(props) => props.theme.brightColor};
+   z-index: 2000;
+
+   @media screen and (max-width: 500px) {
+     width: 100%;
+   }
  `;
 
  const Link = styled.div`

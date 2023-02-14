@@ -20,6 +20,10 @@ export default Portfolio;
 const Projects = styled.div`
   margin: 15rem 0 5rem 0;
   padding: 0 calc(8px + 1.5625vw);
+
+  @media screen and (max-width: 500px) {
+    margin: 5rem 0;
+  }
 `;
 
 const Header = styled.div`

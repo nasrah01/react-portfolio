@@ -54,6 +54,7 @@ export const darkTheme = {
   tertiary: "48, 57, 105",
   brightColor: "#f79784",
   lightPrimary: "#383c7a",
+  darkPrimary: "#202246",
 };
 
 export const lightTheme = {
@@ -64,4 +65,5 @@ export const lightTheme = {
   tertiary: "230, 230, 230",
   brightColor: "#f79784",
   lightPrimary: "#fffaf5",
+  darkPrimary: "#f2f2f2",
 };

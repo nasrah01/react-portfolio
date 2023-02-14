@@ -25,6 +25,7 @@ export default Skill
 
 const SkillBox = styled.div`
   display: flex;
+  flex-wrap: wrap;
 
   p {
     font-size: 1.6rem;

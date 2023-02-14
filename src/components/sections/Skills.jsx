@@ -94,6 +94,10 @@ const ImageTwo = styled.div`
   align-self: flex-start;
   img {
     width: 100%;
+
+    @media screen and (max-width: 500px) {
+      width: 70%;
+    }
   }
 
   @media screen and (max-width: 1000px) {
