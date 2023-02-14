@@ -1,23 +1,12 @@
 export const skillSet = [
   {
-    title: "client",
-    category: "src",
     names: ["Javascript", "React", "Redux", "Typescript", "GraphQl"],
   },
   {
-    title: "styling",
-    category: "css",
     names: ["Sass", "Styled-components", "Tailwind", "React-bootstrap", "Mui"],
   },
   {
-    title: "server",
-    category: "Backend",
-    names: ["Node.js", "Express", "MongoDB"],
-  },
-  {
-    title: "tools",
-    category: "development",
-    names: ["VS code", "github", "browser dev tools", "google cloud", "docker", "postman"],
+    names: ["Node.js", "Express", "MongoDB", "MySQL"],
   },
 ];
 

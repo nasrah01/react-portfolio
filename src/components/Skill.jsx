@@ -1,27 +1,17 @@
 import styled from 'styled-components'
 import { skillSet } from "data/skills";
-import {
-  MdOutlineKeyboardArrowRight,
-  MdOutlineKeyboardArrowDown
- } from "react-icons/md";
- import { AiTwotoneFolderOpen } from "react-icons/ai";
+import {MdOutlineKeyboardArrowRight} from "react-icons/md";
 
 const Skill = () => {
   return (
     <SkillBox>
       {skillSet.map((items, index) => (
-        <Item key= {index}>
-          <Category>
-            <MdOutlineKeyboardArrowDown />
-            <p>{items.title}</p>
-          </Category>
-          <Technology>
-            <MdOutlineKeyboardArrowRight />
-            <p>{items.category}</p>
-          </Technology>
+        <Item key={index}>
           {items.names.map((item, _index) => (
             <Stack key={_index}>
-              <AiTwotoneFolderOpen />
+              <Icon>
+                <MdOutlineKeyboardArrowRight />
+              </Icon>
               <p>{item}</p>
             </Stack>
           ))}
@@ -34,43 +24,26 @@ const Skill = () => {
 export default Skill
 
 const SkillBox = styled.div`
-  font-size: 14px;
-  padding: 10px;
-
-  @media screen and (max-width: 600px) {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 20px 10px;
-  }
-`;
-
-const Item = styled.div`
-  @media screen and (max-width: 600px) {
-    padding-bottom: 10px;
-  }
-`;
-
-const Category = styled.div`
   display: flex;
-  align-items: center;
-  padding: 3px 0;
-  color: ${props => props.theme.plain};
+
+  p {
+    font-size: 1.6rem;
+  }
+`;
+
+const Icon = styled.div`
+  font-size: 2rem;
+  color: ${props => props.theme.brightColor};
 `
 
-const Technology = styled.div`
-  display: flex;
-  align-items: center;
-  padding: 1px 10px;
-  color: ${(props) => props.theme.tertiaryColor};
+const Item = styled.div`
+  padding: 0 2rem;
 `;
 
 const Stack = styled.div`
   display: flex;
   align-items: center;
-  padding: 1px 30px;
-  color: ${(props) => props.theme.primaryColor};
-
   p {
-    padding-left: 5px;
+    color: ${(props) => props.theme.secondaryText};
   }
 `;

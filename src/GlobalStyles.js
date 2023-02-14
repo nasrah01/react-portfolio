@@ -7,16 +7,20 @@ import { createGlobalStyle } from "styled-components";
   *::before,
   *::after,
   h1,h2,h3,h4,h5,h6 {
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 0;
     padding: 0;
     box-sizing: border-box;
     font-weight: normal;
+    font-size: 62.5%;
   }
 
   html {
     scroll-behavior: smooth;
-    height: 100%;
-    overflow-x: hidden;
+    background: linear-gradient(90deg, rgb(${(props) =>
+      props.theme.primary}) calc(100% - 1px), rgb(${(props) =>
+   props.theme.tertiary}) 0);
+    background-size: calc((100% - 4*5px)/5 + 5px) 100%;
   }
 
   body {
@@ -24,23 +28,15 @@ import { createGlobalStyle } from "styled-components";
     padding: 0;
     overflow-x: hidden;
     font-family: 'Karma', serif;
-    background: ${(props) => props.theme.body};
-    color: ${(props) => props.theme.textColor};
     letter-spacing: .5px;
   }
 
-  .btn {
-    border-radius: 50px;
-    cursor: pointer;
-  }
-
   ::-webkit-scrollbar {
-    background: ${(props) => props.theme.body};
     width: .3rem;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: var(--secondary-color);
+    background: #000;
   }
 
   @media screen and (min-width: 280px) and (max-width: 800px) {
@@ -51,39 +47,21 @@ import { createGlobalStyle } from "styled-components";
 `;
 
 export const darkTheme = {
-  body: "#181e34",
-  plain: "#fff",
-  bodyOffSet: "#0c0f1a",
-  bodyTrio: "#171d33",
-  textColor: "#000",
-  typeColor: "#bbbddd",
-  linkColor: "#00e600",
-  primaryColor: "#99a6b2",
-  secondaryColor: "#cc7000",
-  tertiaryColor: "#098bdc",
-  boldColor: "#400d73",
-  boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
-  opacity: "1",
-  border: "1px solid #666666",
-  borderColor: "#666666",
-  zindex: "1",
+  primaryText: "#ffffff",
+  secondaryText: "#b4b4d5",
+  primary: "40, 42, 87",
+  secondary: "#78acd9",
+  tertiary: "48, 57, 105",
+  brightColor: "#f79784",
+  lightPrimary: "#383c7a",
 };
 
 export const lightTheme = {
-  body: "#f2f2f2",
-  bodyOffSet: "#fafafa",
-  plain: "#000",
-  bodyTrio: "#ffffff",
-  textColor: "#1a1a1a",
-  typeColor: "#595959",
-  linkColor: "#0000e6",
-  primaryColor: "#172436",
-  secondaryColor: "#446ca2",
-  tertiaryColor: "#e6007a",
-  boldColor: "rgba(35, 12, 106, .6)",
-  boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
-  opacity: ".9",
-  border: "1px solid #d3d9de",
-  borderColor: "#d3d9de",
-  zindex: "1",
+  primaryText: "#1f2044",
+  secondaryText: "#234969",
+  primary: "255, 255, 255",
+  secondary: "#fcf1e7",
+  tertiary: "230, 230, 230",
+  brightColor: "#f79784",
+  lightPrimary: "#fffaf5",
 };

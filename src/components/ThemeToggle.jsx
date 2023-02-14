@@ -27,15 +27,10 @@ const ToggleContainer = styled.div`
 `;
 
 const Icon = styled.div`
-  color: ${(props) => props.theme.primaryColor};
-  font-size: 24px;
+  font-size: 4rem;
   border-radius: 7px;
   padding: 7px;
   display: flex;
   align-items: center;
-  transition: all .5s ease;
-
-  @media screen and (max-width: 480px) {
-    font-size: 20px;
-  }
+  transition: all 0.5s ease;
 `;

@@ -1,41 +1,51 @@
 import styled from "styled-components";
-import { AiFillGithub } from 'react-icons/ai'
+import { AiFillGithub } from 'react-icons/ai';
 import { BiCopyright } from "react-icons/bi";
-import { FiLinkedin } from 'react-icons/fi'
+import { FiLinkedin } from 'react-icons/fi';
+import { HiOutlineMail } from 'react-icons/hi';
+import ImageFive from '../Images/image5.png'
 
 const Footer = () => {
   return (
     <FooterContainer>
-      <FooterContact>
-        <Title>Find Me</Title>
-        <Mail>
-          <a href="mailto:contact@nasrah.dev" target="_blank" rel="noreferrer">
-            contact@nasrah.dev
-          </a>
-        </Mail>
-        <Icon>
-          <a
-            href="https://github.com/nasrah01"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <AiFillGithub size={20} />
-          </a>
-        </Icon>
-        <Icon>
-          <a
-            href="https://linkedin.com/in/nasrah-abraham-747826254"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FiLinkedin size={20} />
-          </a>
-        </Icon>
-      </FooterContact>
-      <FooterDate>
-        <BiCopyright size={20} />
-        <p>2022 Nasrah Abraham</p>
-      </FooterDate>
+      <Content>
+        <FooterDate>
+          <BiCopyright size={18} />
+          <p>2023 Nasrah Abraham</p>
+        </FooterDate>
+        <FooterContact>
+          <Icon>
+            <a
+              href="mailto:contact@nasrah.dev"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <HiOutlineMail size={20} />
+            </a>
+          </Icon>
+          <Icon>
+            <a
+              href="https://github.com/nasrah01"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <AiFillGithub size={20} />
+            </a>
+          </Icon>
+          <Icon>
+            <a
+              href="https://linkedin.com/in/nasrah-abraham-747826254"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FiLinkedin size={20} />
+            </a>
+          </Icon>
+        </FooterContact>
+      </Content>
+      <Image>
+        <img src={ImageFive} alt="ornament" />
+      </Image>
     </FooterContainer>
   );
 };
@@ -43,75 +53,49 @@ const Footer = () => {
 export default Footer;
 
 const FooterContainer = styled.div`
-  background: ${(props) => props.theme.body};
-  border-top: ${props => props.theme.border};
-  color: ${(props) => props.theme.primaryColor};
-  font-size: 12px;
+  margin-top: 5rem;
+  padding: 0 calc(8px + 1.5625vw);
+`;
+
+const Content = styled.div`
   display: flex;
   justify-content: space-between;
-  z-index: ${(props) => props.theme.zindex};
-
-  @media screen and (max-width: 500px) {
-    flex-direction: column;
-  }
 `;
 
 const FooterContact = styled.div`
   display: flex;
-  align-items: center;
-`;
-
-const Title = styled.div`
-  border-right: ${(props) => props.theme.border};
-  padding: 10px;
-`;
-
-const Mail = styled.div`
-  border-right: ${(props) => props.theme.border};
-  padding: 10px;
-  cursor: pointer;
-
-  a {
-    text-decoration: none;
-  }
-
-  a:link,
-  a:visited {
-    color: ${(props) => props.theme.primaryColor};
-  }
-
-  a:hover,
-  a:focus {
-    color: ${(props) => props.theme.tertiaryColor};
-  }
+  flex-wrap: nowrap;
 `;
 
 const Icon = styled.div`
-  padding: 10px;
   cursor: pointer;
-  border-right: ${(props) => props.theme.border};
+  padding: 0 10px;
 
   a:link,
   a:visited {
-    color: ${(props) => props.theme.primaryColor};
+    color: ${(props) => props.theme.secondaryText};
   }
-
   a:hover,
   a:focus {
-    color: ${(props) => props.theme.tertiaryColor};
+    color: ${(props) => props.theme.brightColor};
   }
 `;
 
 const FooterDate = styled.div`
   display: flex;
   align-items: center;
-  padding: 10px;
+  color: ${props => props.theme.secondaryText};
 
   p {
-    padding-left: 5px;
-  }
-
-  @media screen and (max-width: 500px) {
-    border-top: ${(props) => props.theme.border};
+    font-size: 1.3rem;
+    padding-left: .5rem;
+    margin-top: .2rem;
+    font-weight: 600;
   }
 `;
+
+const Image = styled.div`
+  img {
+    width: 100%;
+  }
+`

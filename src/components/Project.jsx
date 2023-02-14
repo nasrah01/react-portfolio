@@ -1,28 +1,31 @@
 import styled from 'styled-components'
 import {ProjectSet } from '../data/projects'
+import { FiExternalLink } from 'react-icons/fi';
+import { AiFillGithub } from "react-icons/ai";
+
 
 const Project = () => {
 
   return (
     <>
       {ProjectSet.map((project, index) => (
-        <Box key={index}>
-          <Border>
+        <Card key={index}>
+          <Imaging>
+            <img src={project.image} alt={project.title} />
+          </Imaging>
+          <Content>
             <Header>{project.title}</Header>
-            <Content>
-              <Imaging>
-                <img src={project.image} alt={project.title} />
-              </Imaging>
-              <a href={project.projectLink} target="_blank" rel="noreferrer">
-                <Path>View project</Path>
-              </a>
-            </Content>
-          </Border>
-          <Description>{project.description}</Description>
-          <a href={project.codeLink} target="_blank" rel="noreferrer">
-            <Button>Go to Github</Button>
-          </a>
-        </Box>
+            <Description>{project.description}</Description>
+          </Content>
+          <Icons>
+            <a href={project.projectLink} target="_blank" rel="noreferrer">
+              <FiExternalLink />
+            </a>
+            <a href={project.codeLink} target="_blank" rel="noreferrer">
+              <AiFillGithub />
+            </a>
+          </Icons>
+        </Card>
       ))}
     </>
   );
@@ -30,84 +33,56 @@ const Project = () => {
 
 export default Project
 
-const Box = styled.div`
-  max-width: 600px;
-  padding: 0 30px;
-  a {
-    text-decoration: none;
-  }
+const Card = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 20px;
+  background-color: ${(props) => props.theme.darkPrimary};
+  max-width: 400px;
 
-  @media screen and (max-width: 1054px) {
-    padding: 10px 20px 40px 20px;
-  }
-
-  @media screen and (max-width: 600px) {
-    min-width: 380px;
-  }
-`;
-
-const Header = styled.div`
-  color: ${props => props.theme.secondaryColor};
-  padding: 0 20px 10px 20px;
-  font-weight: 600;
-`;
-
-const Border = styled.div`
-  border: ${(props) => props.theme.border};
-  border-radius: 10px;
-  padding: 20px;
-
-  @media screen and (max-width: 600px) {
-    padding: 20px 0;
+  @media screen and (max-width: 1000px) {
+    max-width: 500px;
   }
 `;
 
 const Content = styled.div`
-  background: ${(props) => props.theme.bodyOffSet};
-  border-radius: 10px;
-  padding-bottom: 10px;
+  padding: 2rem 0;
+`;
+
+const Header = styled.div`
+  color: ${(props) => props.theme.brightColor};
+  padding-bottom: .5rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-transform: uppercase;
 `;
 
 const Imaging = styled.div`
-  padding: 20px;
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
-
-  @media screen and (max-width: 600px) {
-    padding: 20px 0;
-  }
-
   img {
-    height: 100%;
     width: 100%;
-    border-radius: 5px;
-    opacity: ${(props) => props.theme.opacity};
+    height: 100%;
   }
 `;
 
-const Path = styled.div`
-  background: ${props => props.theme.secondaryColor};
-  color: ${props => props.theme.bodyOffSet};
-  font-weight: 600;
-  padding: 10px 10px 5px 10px;
-  margin-bottom: 20px;
-`
+const Icons = styled.div`
+  a {
+    font-size: 3rem;
+    padding-right: 2rem;
+  }
+
+  a:link,
+  a:visited {
+    color: ${(props) => props.theme.primaryText};
+  }
+  a:hover,
+  a:focus {
+    color: ${(props) => props.theme.brightColor};
+  }
+`;
 
 const Description = styled.div`
-  padding: 20px 0;
-  color: ${(props) => props.theme.primaryColor};
-  margin-bottom: 10px;
-
-  @media screen and (max-width: 600px) {
-    font-size: 14px;
-  }
-`;
-
-const Button = styled.div`
-  color: ${props => props.theme.tertiaryColor};
-  border: 1.5px solid ${props => props.theme.primaryColor};
-  padding: 10px;
-  border-radius: 50px;
-  display: inline;
+  color: ${(props) => props.theme.secondaryText};
+  font-size: 1.6rem;
 `;

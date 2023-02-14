@@ -1,9 +1,13 @@
 import { useState } from 'react';
+import { HashLink as NavLink } from "react-router-hash-link";
 import styled from 'styled-components'
 import ThemeToggle from "../components/ThemeToggle";
-import {FcMenu} from 'react-icons/fc'
-import {MdOutlineClose} from 'react-icons/md'
-import { NavLink } from "react-router-dom";
+import { CgMenuRight } from "react-icons/cg";
+import {MdOutlineClose} from 'react-icons/md';
+import { AiFillGithub } from "react-icons/ai";
+import { FiLinkedin } from "react-icons/fi";
+import { HiOutlineMail } from "react-icons/hi";
+import { BiCopyright } from "react-icons/bi";
 
 const NavBar = () => {
 
@@ -13,46 +17,92 @@ const NavBar = () => {
   
   return (
     <NavContainer>
-      <Title>
-        <Buttons>
-          <span style={{ background: "#FF605C" }}></span>
-          <span style={{ background: "#F3C94F" }}></span>
-          <span style={{ background: "#95EB80" }}></span>
-        </Buttons>
-        <Name>nasrah_abraham</Name>
+      <Name>NA</Name>
+      <NavButtons>
         <Toggles>
           <ThemeToggle />
           <NavToggle>
             {isOpen ? (
               <MdOutlineClose onClick={() => setIsOpen(false)} />
             ) : (
-              <FcMenu onClick={() => setIsOpen(true)} />
+              <CgMenuRight onClick={() => setIsOpen(true)} />
             )}
           </NavToggle>
         </Toggles>
-      </Title>
-      <NavLinks isOpen={isOpen}>
-        <NavLink to="/" onClick={() => {
-                setIsOpen(false);
-              }}>
-          <li>_home</li>
-        </NavLink>
-        <NavLink to="/skills" onClick={() => {
-                setIsOpen(false);
-              }}>
-          <li>_about me</li>
-        </NavLink>
-        <NavLink to="/portfolio" onClick={() => {
-                setIsOpen(false);
-              }}>
-          <li>_projects</li>
-        </NavLink>
-        <NavLink to="/contact" onClick={() => {
-                setIsOpen(false);
-              }}>
-          <li>_contact</li>
-        </NavLink>
-      </NavLinks>
+        <NavLinks isOpen={isOpen}>
+          <Link>
+          <NavLink
+            to="#home"
+            onClick={() => {
+              setIsOpen(false);
+            }}
+            smooth
+          >
+            <li>Home</li>
+          </NavLink>
+          <NavLink
+            to="#skills"
+            onClick={() => {
+              setIsOpen(false);
+            }}
+            smooth
+          >
+            <li>About me</li>
+          </NavLink>
+          <NavLink
+            to="#portfolio"
+            onClick={() => {
+              setIsOpen(false);
+            }}
+            smooth
+          >
+            <li>Projects</li>
+          </NavLink>
+          <NavLink
+            to="#contact"
+            onClick={() => {
+              setIsOpen(false);
+            }}
+            smooth
+          >
+            <li>Contact</li>
+          </NavLink>
+          </Link>
+          <SocialLinks>
+            <Icon>
+              <a
+                href="mailto:contact@nasrah.dev"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <HiOutlineMail size={20} />
+              </a>
+            </Icon>
+            <Icon>
+              <a
+                href="https://github.com/nasrah01"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <AiFillGithub size={20} />
+              </a>
+            </Icon>
+            <Icon>
+              <a
+                href="https://linkedin.com/in/nasrah-abraham-747826254"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FiLinkedin size={20} />
+              </a>
+            </Icon>
+          </SocialLinks>
+          <Copyright>
+            <BiCopyright size={20} />
+            <p>2022 Nasrah Abraham</p>
+          </Copyright>
+        </NavLinks>
+      </NavButtons>
     </NavContainer>
   );
 }
@@ -60,112 +110,102 @@ const NavBar = () => {
 export default NavBar
 
 const NavContainer = styled.div`
-  background: ${(props) => props.theme.body};
-  height: 100%;
-  
-  z-index: 3;
-`;
-
-const Title = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 10px 5px;
+  padding: 4rem calc(28px + 1.5625vw);
+  color: ${(props) => props.theme.primaryText};
 `;
 
 const Name = styled.h2`
-   font-size: 16px;
-   color: ${(props) => props.theme.primaryColor};
+  color: ${(props) => props.theme.primaryText};
+  font-size: 28px;
+  font-family: "Montez", cursive;
 `;
 
-const Buttons = styled.div`
-  display: flex;
-
-  span {
-    height: 13px;
-    width: 13px;
-    border-radius: 6.5px;
-    margin: 0 5px;
-    background: black;
-
-    @media screen and (max-width: 600px) {
-      height: 10px;
-      width: 10px;
-      border-radius: 5px;
-      margin: 0 3px;
-    }
-  }
-`;
+const NavButtons = styled.div``
 
 const Toggles = styled.div`
   display: flex;
 `;
 
 const NavToggle = styled.div`
-  display: none;
+  font-size: 4rem;
+  border-radius: 7px;
+  padding: 7px;
+  display: flex;
+  align-items: center;
+  transition: all 0.5s ease;
+  z-index: 3;
+  cursor: pointer;
+`;
 
-  @media screen and (max-width: 700px) {
-    z-index: 3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    padding: 0 1rem 0 0.5rem;
-    font-size: 20px;
-    color: ${(props) => props.theme.primaryColor};
-    transition: all 0.5s ease;
+const SocialLinks = styled.div`
+  display: flex;
+  justify-content: center;
+`
 
-    &:hover {
-      color: ${(props) => props.theme.secondaryColor};
-    }
+const Icon = styled.div`
+  cursor: pointer;
+  padding: 0 10px;
+
+  a:link,
+  a:visited {
+    color: ${props => props.theme.secondaryText};
+  }
+  a:hover,
+  a:focus {
+    color: ${props => props.theme.brightColor};
   }
 `;
 
+const Copyright = styled.div`
+  display: flex;
+  padding: 30px 5px 20px 5px;
+  align-items: center;
+
+  p {
+    font-size: 12px;
+    padding-left: 5px;
+  }
+`
+
  const NavLinks = styled.div`
+   background: ${(props) => props.theme.lightPrimary};
+   width: 40vw;
+   position: fixed;
+   right: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
+   top: 0;
+   height: 100vh;
    display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   transition: 0.5s;
+   border-bottom: 2px solid ${props => props.theme.brightColor};
+ `;
+
+ const Link = styled.div`
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
    align-items: center;
-   background: ${(props) => props.theme.bodyOffSet};
-   list-style-type: none;
-   width: 100%;
+   list-style: none;
+   flex: 1;
 
-   a {
-     text-decoration: none;
-     color: ${(props) => props.theme.primaryColor};
-     padding: 10px 45px;
-     border-right: 1px solid ${(props) => props.theme.borderColor};
-     font-size: 14px;
+    a { 
+      border: none;
+      font-size: 4rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0 10px;
+      margin-bottom: 1rem;
+    }
+
+   a:link,
+   a:visited {
+     color: ${props => props.theme.primaryText};
    }
-
-   .active {
-     background: ${(props) => props.theme.body};
-     color: ${(props) => props.theme.secondaryColor};
-     border: none;
-     border-top: 3px solid #ff605c;
-   }
-
-   @media screen and (max-width: 700px) {
-     position: fixed;
-     left: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
-     top: 0;
-     height: 100vh;
-     flex-direction: column;
-     justify-content: center;
-     transition: 0.5s;
-
-     a {
-       border: none;
-       text-align: center;
-       font-size: 24px;
-     }
-
-     .active {
-       background: ${(props) => props.theme.body};
-       color: ${(props) => props.theme.secondaryColor};
-       border: none;
-     }
-
-     .hidden {
-       left: -100%;
-     }
+   a:hover,
+   a:focus {
+     background-color: ${props => props.theme.secondary};
    }
  `;
