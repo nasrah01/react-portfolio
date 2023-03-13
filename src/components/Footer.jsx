@@ -95,7 +95,10 @@ const FooterDate = styled.div`
 `;
 
 const Image = styled.div`
+  display: flex;
+  justify-content: flex-end;
   img {
     width: 100%;
+    height: 100%;
   }
 `

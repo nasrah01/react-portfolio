@@ -202,6 +202,7 @@ const Form = styled.form`
     margin-top: 2rem;
     border-radius: 50px;
     cursor: pointer;
+    transition: all .5s ease;
 
     div {
       background-color: ${(props) => props.theme.primaryText};
@@ -210,6 +211,10 @@ const Form = styled.form`
       margin: 0.6rem;
       padding: 0.5rem 1rem;
       border-radius: 50px;
+    }
+
+    &:hover {
+      transform: translateY(-.5rem) scale(1.1, 1.1);
     }
   }
 `;
@@ -238,8 +243,9 @@ const FormInput = styled.div`
   }
 
   span {
-    font-size: 1.2rem;
-    color: ${props => props.theme.primary};
+    font-size: 1.3rem;
+    color: ${props => props.theme.highlight};
+    padding-top: 10px;
   }
 `; 
     

@@ -90,7 +90,7 @@ const Content = styled.div`
   div {
     font-size: 2.5rem;
     color: ${props => props.theme.brightColor};
-    font-weight: 600;
+    font-weight: bold;
   }
 `;
 

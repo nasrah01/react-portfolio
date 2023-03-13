@@ -55,6 +55,7 @@ export const darkTheme = {
   brightColor: "#f79784",
   lightPrimary: "#383c7a",
   darkPrimary: "#202246",
+  highlight: "#FB9D9D",
 };
 
 export const lightTheme = {
@@ -66,4 +67,5 @@ export const lightTheme = {
   brightColor: "#f79784",
   lightPrimary: "#fffaf5",
   darkPrimary: "#f2f2f2",
+  highlight: "#dc143c",
 };

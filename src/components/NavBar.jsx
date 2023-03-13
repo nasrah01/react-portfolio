@@ -116,7 +116,7 @@ const NavContainer = styled.div`
   color: ${(props) => props.theme.primaryText};
 
   @media screen and (max-width: 500px) {
-    padding: 4rem 2rem;
+    padding: 2rem;
   }
 `;
 

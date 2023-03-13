@@ -17,7 +17,6 @@ const Skills = (props) => {
           <Skill />
         </SkillsContainer>
       </AboutContainer>
-
       <ImageContainer>
         <ImageOne>
           <img src={Image02} alt="workspace" />
@@ -68,6 +67,10 @@ const ImageContainer = styled.div`
   flex: 50%;
   display: flex;
   flex-direction: column;
+
+  @media screen and (max-width: 480px) {
+    transform: translateY(-80px);
+  }
 
 `
 
