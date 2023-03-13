@@ -49,12 +49,12 @@ const Contact = (props) => {
           </ContactMail>
         </ContactHeader>
         <FormBox>
-          {isSubmit && (
+          {isSubmit ? (
             <Success>
               <p>Thank you, your message has been sent!</p>
             </Success>
-          )}
-          <Form ref={form} onSubmit={handleSubmit(sendEmail)}>
+          ) : (
+            <Form ref={form} onSubmit={handleSubmit(sendEmail)}>
             <FormInput>
               <label htmlFor="name">Name:</label>
               <input
@@ -101,6 +101,8 @@ const Contact = (props) => {
               <div>Send Message</div>
             </button>
           </Form>
+          )}
+          
         </FormBox>
       </FormContainer>
     </ContactContainer>
@@ -185,7 +187,13 @@ const FormBox = styled.div`
 `
 
 const Success = styled.div`
- 
+  padding: 5rem;
+
+  p {
+    font-size: 1.6rem;
+    color: ${props => props.theme.brightColor};
+    font-weight: bold;
+  }
 `;
 
 const Form = styled.form`
@@ -226,11 +234,16 @@ const FormInput = styled.div`
   justify-content: center;
   padding: 1rem 0;
 
-  label,
-  input,
-  textarea {
+  label {
     font-size: 1.6rem;
     color: ${(props) => props.theme.secondaryText};
+  }
+
+  input,
+  textarea {
+    padding: .5rem;
+    font-size: 1.6rem;
+    color: ${(props) => props.theme.input};
   }
 
   input,
@@ -241,10 +254,11 @@ const FormInput = styled.div`
       width: 100%;
     }
   }
+  
 
   span {
     font-size: 1.3rem;
-    color: ${props => props.theme.highlight};
+    color: ${(props) => props.theme.highlight};
     padding-top: 10px;
   }
 `; 
