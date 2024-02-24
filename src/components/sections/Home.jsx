@@ -12,7 +12,7 @@ function Home() {
         <Hero>
           <Header>
             <h2>
-              Hello! I am <span>Nasrah Abraham</span> <br /> Front End Developer
+              Hello! I am <span>Nasrah Abraham</span>
             </h2>
           </Header>
           <AboutContent>

@@ -11,7 +11,7 @@ const Footer = () => {
       <Content>
         <FooterDate>
           <BiCopyright size={18} />
-          <p>2023 Nasrah Abraham</p>
+          <p>2024 Nasrah Abraham</p>
         </FooterDate>
         <FooterContact>
           <Icon>
