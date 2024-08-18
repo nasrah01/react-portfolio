@@ -99,7 +99,7 @@ const NavBar = () => {
           </SocialLinks>
           <Copyright>
             <BiCopyright size={20} />
-            <p>2022 Nasrah Abraham</p>
+            <p>2024 Nasrah Abraham</p>
           </Copyright>
         </NavLinks>
       </NavButtons>
